@@ -3,6 +3,16 @@ import axios from 'axios'
 import { LoginInputs, RegisterInputs } from '../../types'
 import { RootState } from '../../app/store'
 
+const initialState = {
+    email: '',
+    password: '',
+    username: '',
+    loading: false,
+    isError: false,
+    isSuccess: false,
+    errorMessage: '',
+}
+
 export const signupUser = createAsyncThunk(
     'users/signup',
     async ({ username, email, password }: RegisterInputs, thunkAPI) => {
@@ -61,16 +71,6 @@ export const loginUser = createAsyncThunk(
         }
     }
 );
-
-const initialState = {
-    email: '',
-    password: '',
-    username: '',
-    loading: false,
-    isError: false,
-    isSuccess: false,
-    errorMessage: '',
-}
 
 const authSlice = createSlice({
     name: 'auth',

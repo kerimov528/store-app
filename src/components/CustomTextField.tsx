@@ -4,6 +4,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useState } from "react";
 import { Controller } from "react-hook-form";
 import { CustomTextFieldProps } from "../types";
+import React from "react";
 
 export const CustomTextField = ({
     name,

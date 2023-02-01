@@ -1,9 +1,10 @@
-import { Avatar, Box, Button,  Divider, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material'
+import { Avatar, Box, Button, Divider, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material'
 import { useAppDispatch } from '../../hooks/hook';
 
 import {
     addToCart,
     decreaseCart,
+    increaseCart,
     removeFromCart,
 } from '../../features/card/cardSliceM'
 
@@ -12,6 +13,10 @@ const CardItem = ({ cartItem }: { cartItem: any }) => {
 
     const handleDecreaseCart = (cartItem: any) => {
         dispatch(decreaseCart(cartItem));
+    };
+
+    const handleIncreaseCart = (cartItem: any) => {
+        dispatch(increaseCart(cartItem));
     };
 
     return (
@@ -49,7 +54,7 @@ const CardItem = ({ cartItem }: { cartItem: any }) => {
                             <Box display='flex' alignItems='center'>
                                 <Button onClick={() => handleDecreaseCart(cartItem)}> - </Button>
                                 <Typography>{cartItem.cartQuantity}</Typography>
-                                <Button onClick={() => addToCart(cartItem)}>+</Button>
+                                <Button onClick={() => handleIncreaseCart(cartItem)}>+</Button>
                             </Box>
                         }
                     />
