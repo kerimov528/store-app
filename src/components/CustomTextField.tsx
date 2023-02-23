@@ -28,7 +28,7 @@ export const CustomTextField = ({
                         helperText={error ? error.message : null}
                         onChange={onChange}
                         value={value}
-                        error={!!error}
+                        error={Boolean(error)}
                         placeholder={placeholder}
                         type={
                             type === "password" ? (showPassword ? "text" : "password") : type
