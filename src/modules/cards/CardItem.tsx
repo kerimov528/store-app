@@ -38,9 +38,7 @@ const CardItem = ({ cartItem }: { cartItem: any }) => {
                                 </Typography>
                                 <Button onClick={() => removeFromCart(cartItem)}>Remove</Button>
                             </>
-                        }>
-
-                    </ListItemText>
+                        } />
                     <ListItemText primary='Price' secondary={
                         <>
                             <Typography>
