@@ -19,7 +19,7 @@ const SignUp = () => {
     })
 
     const onSubmit = (data: RegisterInputs) => {
-        console.log(data);
+        
         // dispatch(signupUser(data))
         reset()
     }
