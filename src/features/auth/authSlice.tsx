@@ -27,7 +27,7 @@ export const signupUser = createAsyncThunk(
             })
 
             const data: any = await response.data
-            console.log(response);
+            
 
             if (response.status === 200) {
                 localStorage.setItem('token', data.token);
@@ -57,7 +57,7 @@ export const loginUser = createAsyncThunk(
             }
             )
 
-            console.log('result', result);
+            
 
             // if (result.status === 200) {
             //     localStorage.setItem('token', result.token);
@@ -94,7 +94,7 @@ const authSlice = createSlice({
         })
 
         builder.addCase(signupUser.fulfilled, (state, { payload }) => {
-            console.log('payload', payload)
+            
             state.email = payload.email
             state.password = payload.password
             state.username = payload.username
@@ -102,7 +102,7 @@ const authSlice = createSlice({
         })
 
         builder.addCase(signupUser.rejected, (state, { payload }) => {
-            console.log('payload', payload)
+            
             state.loading = false
             // state.errorMessage = payload.message
         })
@@ -114,7 +114,7 @@ const authSlice = createSlice({
         })
 
         builder.addCase(loginUser.fulfilled, (state, { payload }) => {
-            console.log('payload', payload)
+            
             // state.password = payload
             // state.username = payload
             state.loading = false
@@ -123,7 +123,7 @@ const authSlice = createSlice({
         })
 
         builder.addCase(loginUser.rejected, (state, { payload }) => {
-            console.log('payload', payload)
+            
             state.loading = false
             state.isError = true
             // state.errorMessage = payload.message
